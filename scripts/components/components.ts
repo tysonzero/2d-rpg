@@ -1,1 +1,1 @@
-var components = {}
+var components = {};

@@ -1,1 +1,1 @@
-interface component {}
+interface component {};
