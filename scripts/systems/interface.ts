@@ -1,3 +1,0 @@
-interface System {
-    (): void;
-}
