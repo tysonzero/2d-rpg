@@ -1,4 +1,5 @@
-/// <reference path='components/components.ts'/>
+/// <reference path='components/position.ts'/>
+/// <reference path='components/velocity.ts'/>
 
 class Entity {
     position: components.position;
