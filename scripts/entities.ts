@@ -2,8 +2,8 @@
 /// <reference path='components/velocity.ts'/>
 
 class Entity {
-    position: components.position;
-    velocity: components.velocity;
+    position: components.Position;
+    velocity: components.Velocity;
 }
 
 var entities: Entity[] = [];

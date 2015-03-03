@@ -1,5 +1,5 @@
 module components {
-    export class velocity {
+    export class Velocity {
         x: number;
         y: number;
         constructor(options?: {x?: number; y?: number}) {

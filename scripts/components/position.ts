@@ -1,5 +1,5 @@
 module components {
-    export class position {
+    export class Position {
         x: number;
         y: number;
         constructor(options?: {x?: number; y?: number}) {
