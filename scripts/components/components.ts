@@ -1,5 +1,7 @@
 /// <reference path='position.ts'/>
+/// <reference path='velocity.ts'/>
 
 var components = {
-    position: PositionComponent
+    position: PositionComponent,
+    velocity: VelocityComponent
 };
