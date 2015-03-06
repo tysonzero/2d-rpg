@@ -9,5 +9,5 @@ module systems {
                 entities[i].position.y += entities[i].velocity.y;
             }
         }
-    };
+    }
 }
