@@ -2,14 +2,9 @@
 /// <reference path='components/velocity.ts'/>
 /// <reference path='components/sprite.ts'/>
 
-class Entity {
-    position: components.Position;
-    velocity: components.Velocity;
-    constructor(options?: {position?: components.Position; velocity?: components.Velocity}) {
-        options = options || {};
-        this.position = options.position;
-        this.velocity = options.velocity;
-    }
+interface Entity {
+    position?: components.Position;
+    velocity?: components.Velocity;
     sprite?: components.Sprite;
 }
 
