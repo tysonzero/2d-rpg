@@ -1,11 +1,6 @@
 module components {
-    export class Sprite {
+    export interface Sprite {
         width: number;
         height: number;
-        constructor(options?: {width?: number; height?: number}) {
-            options = options || {};
-            this.width = options.width;
-            this.height = options.height;
-        }
     }
 }
