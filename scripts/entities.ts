@@ -10,8 +10,8 @@ interface Entity {
 
 var entities: Entity[] = [
     {
-        position: {x: 50, y: 25},
-        velocity: {x: 10, y: 10},
-        sprite: {width: 100, height: 50, color: '#FF0000', shape: 'rect'}
+        position: {x: 400, y: 300},
+        velocity: {x: 50, y: 50},
+        sprite: {width: 50, height: 50, color: '#FF0000', shape: 'ellipse'}
     }
 ];
