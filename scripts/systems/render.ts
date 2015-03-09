@@ -20,14 +20,14 @@ module systems {
                     );
                     break;
                 case 'ellipse':
-                    context.beginPath();
                     context.save();
+                    context.beginPath();
                     context.translate(entities[i].position.x - entities[i].sprite.width / 2,
                                       entities[i].position.y - entities[i].sprite.height / 2);
                     context.scale(entities[i].sprite.width / 2, entities[i].sprite.height / 2);
                     context.arc(1, 1, 1, 0, 2 * Math.PI);
-                    context.restore();
                     context.fill();
+                    context.restore();
                     break;
                 }
             }
