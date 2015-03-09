@@ -3,5 +3,6 @@ module components {
         width: number;
         height: number;
         color: string;
+        shape: string;
     }
 }
