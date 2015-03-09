@@ -2,13 +2,11 @@
 /// <reference path='components/velocity.ts'/>
 /// <reference path='components/sprite.ts'/>
 
-interface Entity {
+var entities: {
     position?: components.Position;
     velocity?: components.Velocity;
     sprite?: components.Sprite;
-}
-
-var entities: Entity[] = [
+}[] = [
     {
         position: {x: 400, y: 300},
         velocity: {x: 50, y: 50},
