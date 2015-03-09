@@ -3,7 +3,7 @@
 
 module systems {
     export function render() {
-        var i;
+        var i: number;
         context.clearRect(0, 0, context.canvas.width, context.canvas.height);
         context.fillStyle = '#FFFFFF';
         context.fillRect(0, 0, context.canvas.width, context.canvas.height);
