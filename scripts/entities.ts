@@ -8,4 +8,10 @@ interface Entity {
     sprite?: components.Sprite;
 }
 
-var entities: Entity[] = [];
+var entities: Entity[] = [
+    {
+        position: {x: 50, y: 25},
+        velocity: {x: 10, y: 10},
+        sprite: {width: 100, height: 50, color: '#FF0000', shape: 'rect'}
+    }
+];
