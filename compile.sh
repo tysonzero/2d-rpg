@@ -1,1 +1,1 @@
-exec tsc --out game.js scripts/engine.ts
+exec tsc --out game.js scripts/engine.ts --noImplicitAny
