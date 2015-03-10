@@ -1,28 +1,28 @@
 /// <reference path='../entities.ts'/>
-/// <reference path='../singletons/keys.ts'/>
+/// <reference path='../keys.ts'/>
 
 window.addEventListener('keydown', function (event) {
-    if (!singletons.keys[event.keyCode]) {
-        singletons.keys[event.keyCode] = {
+    if (!keys[event.keyCode]) {
+        keys[event.keyCode] = {
             down: true,
             clicked: 1,
             released: 0
         }
     }
-    singletons.keys[event.keyCode].clicked++;
-    singletons.keys[event.keyCode].down = true;
+    keys[event.keyCode].clicked++;
+    keys[event.keyCode].down = true;
 });
 
 window.addEventListener('keyup', function (event) {
-    if (!singletons.keys[event.keyCode]) {
-        singletons.keys[event.keyCode] = {
+    if (!keys[event.keyCode]) {
+        keys[event.keyCode] = {
             down: false,
             clicked: 0,
             released: 1
         }
     }
-    singletons.keys[event.keyCode].released++;
-    singletons.keys[event.keyCode].down = false;
+    keys[event.keyCode].released++;
+    keys[event.keyCode].down = false;
 });
 
 module systems {
@@ -30,10 +30,10 @@ module systems {
         var i: number;
         for (i = entities.length - 1; i >= 0; i--) {
             if (entities[i] && entities[i].input) {
-                var downKey = singletons.keys[entities[i].input.upKey],
-                    upKey = singletons.keys[entities[i].input.downKey],
-                    leftKey = singletons.keys[entities[i].input.leftKey],
-                    rightKey = singletons.keys[entities[i].input.rightKey];
+                var downKey = keys[entities[i].input.upKey],
+                    upKey = keys[entities[i].input.downKey],
+                    leftKey = keys[entities[i].input.leftKey],
+                    rightKey = keys[entities[i].input.rightKey];
                 if (downKey && downKey.down) {
                     entities[i].velocity.y -= delta * entities[i].input.acceleration;
                 }
@@ -48,10 +48,10 @@ module systems {
                 }
             }
         }
-        for (i = singletons.keys.length - 1; i >= 0; i--) {
-            if (singletons.keys[i]) {
-                singletons.keys[i].clicked = 0;
-                singletons.keys[i].released = 0;
+        for (i = keys.length - 1; i >= 0; i--) {
+            if (keys[i]) {
+                keys[i].clicked = 0;
+                keys[i].released = 0;
             }
         }
     }
