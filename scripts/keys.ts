@@ -14,8 +14,6 @@ window.addEventListener('keydown', function (event) {
     }
     keys[event.keyCode].clicked++;
     keys[event.keyCode].down = true;
-    event.preventDefault();
-    return false;
 });
 
 window.addEventListener('keyup', function (event) {
