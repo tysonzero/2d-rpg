@@ -4,9 +4,6 @@
 module systems {
     export function render() {
         var i: number;
-        context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-        context.fillStyle = '#FFFFFF';
-        context.fillRect(0, 0, context.canvas.width, context.canvas.height);
         for (i = entities.length - 1; i >= 0; i--) {
             if (entities[i] && entities[i].position && entities[i].sprite) {
                 context.fillStyle = entities[i].sprite.color;
