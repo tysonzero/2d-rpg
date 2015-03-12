@@ -12,5 +12,5 @@ var engine = {
         systems.render();
         window.requestAnimationFrame(engine.tick);
     }
-}
+};
 window.requestAnimationFrame(engine.tick);
