@@ -8,12 +8,12 @@ var keys: {
     released: []
 };
 
-window.addEventListener('keydown', function (event) {
+window.addEventListener('keydown', (event) => {
     keys.clicked[event.keyCode] = keys.clicked[event.keyCode] + 1 || 1;
     keys.down[event.keyCode] = true;
 });
 
-window.addEventListener('keyup', function (event) {
+window.addEventListener('keyup', (event) => {
     keys.released[event.keyCode] = keys.released[event.keyCode] + 1 || 1;
     keys.down[event.keyCode] = false;
 });
