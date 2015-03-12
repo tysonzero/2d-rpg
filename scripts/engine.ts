@@ -1,3 +1,4 @@
+/// <reference path='systems/update-time.ts'/>
 /// <reference path='systems/move.ts'/>
 /// <reference path='systems/render.ts'/>
 /// <reference path='systems/input.ts'/>
@@ -9,6 +10,7 @@ var engine = {
         engine.time = performance.now();
         systems.input(delta);
         systems.move(delta);
+        systems.updateTime();
         systems.render();
         window.requestAnimationFrame(engine.tick);
     }
