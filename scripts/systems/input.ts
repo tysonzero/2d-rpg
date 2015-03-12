@@ -1,6 +1,6 @@
 /// <reference path='../entities.ts'/>
-/// <reference path='../time.ts'/>
 /// <reference path='../keys.ts'/>
+/// <reference path='../time.ts'/>
 
 module systems {
     export function input() {

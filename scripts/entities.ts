@@ -1,7 +1,7 @@
-/// <reference path='components/position.ts'/>
-/// <reference path='components/velocity.ts'/>
-/// <reference path='components/sprite.ts'/>
 /// <reference path='components/input.ts'/>
+/// <reference path='components/position.ts'/>
+/// <reference path='components/sprite.ts'/>
+/// <reference path='components/velocity.ts'/>
 
 var entities: {
     position?: components.Position;
