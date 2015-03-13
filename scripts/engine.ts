@@ -1,4 +1,4 @@
-/// <reference path='systems/input.ts'/>
+/// <reference path='systems/walk.ts'/>
 /// <reference path='systems/move.ts'/>
 /// <reference path='systems/render.ts'/>
 /// <reference path='systems/reset-context.ts'/>
@@ -8,7 +8,7 @@
 var engine = {
     tick: () => {
         systems.updateTime();
-        systems.input();
+        systems.walk();
         systems.move();
         systems.resetContext();
         systems.render();

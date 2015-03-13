@@ -1,5 +1,5 @@
 module components {
-    export interface Input {
+    export interface Walk {
         acceleration: number;
         upKey: number;
         downKey: number;
