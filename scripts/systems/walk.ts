@@ -5,22 +5,17 @@
 module systems {
     export function walk() {
         var i: number;
-        var up: number;
-        var down: number;
-        var left: number;
-        var right: number;
         var desired: {x: number; y: number};
         var change: {x: number; y: number};
         for (i = entities.length - 1; i >= 0; i--) {
             if (entities[i] && entities[i].walk) {
-                up = keys.down[entities[i].walk.keys.up] ? 1 : 0;
-                down = keys.down[entities[i].walk.keys.down] ? 1 : 0;
-                left = keys.down[entities[i].walk.keys.left] ? 1 : 0;
-                right = keys.down[entities[i].walk.keys.right] ? 1 : 0;
-                desired = {
-                    x: (right - left) * ((down - up) ? Math.sqrt(2) / 2 : 1),
-                    y: (down - up) * ((right - left) ? Math.sqrt(2) / 2 : 1)
-                };
+                desired = {x: 0, y: 0};
+                if (keys.down[entities[i].walk.keys.up]) desired.y--;
+                if (keys.down[entities[i].walk.keys.down]) desired.y++;
+                if (keys.down[entities[i].walk.keys.left]) desired.x--;
+                if (keys.down[entities[i].walk.keys.right]) desired.x++;
+                if (desired.x) desired.y /= Math.sqrt(2);
+                if (desired.y) desired.x /= Math.sqrt(2);
                 desired.x *= entities[i].walk.speed;
                 desired.y *= entities[i].walk.speed;
                 change = {
