@@ -1,3 +1,4 @@
+/// <reference path='components/hitbox.ts'/>
 /// <reference path='components/position.ts'/>
 /// <reference path='components/sprite.ts'/>
 /// <reference path='components/velocity.ts'/>
@@ -6,6 +7,7 @@
 var entities: {
     position?: components.Position;
     velocity?: components.Velocity;
+    hitbox?: components.Hitbox;
     sprite?: components.Sprite;
     walk?: components.Walk;
 }[] = [
