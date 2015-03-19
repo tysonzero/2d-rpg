@@ -1,3 +1,4 @@
+/// <reference path='systems/collide.ts'/>
 /// <reference path='systems/move.ts'/>
 /// <reference path='systems/render.ts'/>
 /// <reference path='systems/reset-context.ts'/>
@@ -10,6 +11,7 @@ var engine = {
         systems.updateTime();
         systems.walk();
         systems.move();
+        systems.collide();
         systems.resetContext();
         systems.render();
         systems.resetKeys();
