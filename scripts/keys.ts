@@ -15,5 +15,5 @@ window.addEventListener('keydown', (event) => {
 
 window.addEventListener('keyup', (event) => {
     keys.released[event.keyCode] = keys.released[event.keyCode] + 1 || 1;
-    keys.down[event.keyCode] = false;
+    delete keys.down[event.keyCode];
 });
