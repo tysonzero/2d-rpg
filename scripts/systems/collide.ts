@@ -44,7 +44,7 @@ module systems {
         var i: number;
         var j: number;
         for (i = entities.length - 1; i >= 0; i--) {
-            if (entities[i] && entities[i].position && entities[i].hitbox) {
+            if (entities[i] && entities[i].position && entities[i].velocity && entities[i].hitbox) {
                 for (j = i - 1; j >= 0; j--) {
                     if (entities[j] && entities[j].position && entities[j].hitbox) {
                         if (entities[i].hitbox.shape === 'rect' && entities[j].hitbox.shape === 'rect') {
