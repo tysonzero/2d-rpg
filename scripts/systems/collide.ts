@@ -13,6 +13,8 @@ module systems {
         var bottomOverlapTime: number;
         var velocityI: number;
         var velocityJ: number;
+        var massI: number;
+        var massJ: number;
         leftOverlap = entities[j].position.x - entities[i].position.x + entities[i].hitbox.width / 2 + entities[j].hitbox.width / 2;
         rightOverlap = entities[i].position.x - entities[j].position.x + entities[i].hitbox.width / 2 + entities[j].hitbox.width / 2;
         topOverlap = entities[j].position.y - entities[i].position.y + entities[i].hitbox.height / 2 + entities[j].hitbox.height / 2;
@@ -25,8 +27,10 @@ module systems {
                 && topOverlap > 0 && bottomOverlap > 0) {
             velocityI = entities[i].velocity.x;
             velocityJ = entities[j].velocity.x;
-            entities[i].velocity.x = velocityJ;
-            entities[j].velocity.x = velocityI;
+            massI = entities[i].hitbox.mass;
+            massJ = entities[j].hitbox.mass;
+            entities[i].velocity.x = (massI - massJ) / (massI + massJ) * velocityI + (2 * massJ) / (massI + massJ) * velocityJ;
+            entities[j].velocity.x = (2 * massI) / (massI + massJ) * velocityI + (massJ - massI) / (massI + massJ) * velocityJ;
             entities[i].position.x += time.delta * entities[i].velocity.x;
             entities[j].position.x += time.delta * entities[j].velocity.x;
         }
