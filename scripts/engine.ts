@@ -7,17 +7,15 @@
 /// <reference path='systems/update-time.ts'/>
 /// <reference path='systems/walk.ts'/>
 
-var engine = {
-    tick: () => {
-        systems.updateTime();
-        systems.walk();
-        systems.move();
-        systems.collide();
-        systems.resetContext();
-        systems.render();
-        systems.resetKeys();
-        systems.resetMouse();
-        window.requestAnimationFrame(engine.tick);
-    }
-};
-window.requestAnimationFrame(engine.tick);
+function engine() {
+    systems.updateTime();
+    systems.walk();
+    systems.move();
+    systems.collide();
+    systems.resetContext();
+    systems.render();
+    systems.resetKeys();
+    systems.resetMouse();
+    window.requestAnimationFrame(engine);
+}
+window.requestAnimationFrame(engine);
