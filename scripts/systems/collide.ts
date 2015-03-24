@@ -38,8 +38,10 @@ module systems {
                 && leftOverlap > 0 && rightOverlap > 0) {
             velocityI = entities[i].velocity.y;
             velocityJ = entities[j].velocity.y;
-            entities[i].velocity.y = velocityJ;
-            entities[j].velocity.y = velocityI;
+            massI = entities[i].hitbox.mass;
+            massJ = entities[j].hitbox.mass;
+            entities[i].velocity.y += 2 * massJ / (massI + massJ) * (velocityJ - velocityI)
+            entities[j].velocity.y += 2 * massI / (massI + massJ) * (velocityI - velocityJ)
             entities[i].position.y += time.delta * entities[i].velocity.y;
             entities[j].position.y += time.delta * entities[j].velocity.y;
         }
