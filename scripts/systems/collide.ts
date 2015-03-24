@@ -29,8 +29,8 @@ module systems {
             velocityJ = entities[j].velocity.x;
             massI = entities[i].hitbox.mass;
             massJ = entities[j].hitbox.mass;
-            entities[i].velocity.x = (massI - massJ) / (massI + massJ) * velocityI + (2 * massJ) / (massI + massJ) * velocityJ;
-            entities[j].velocity.x = (2 * massI) / (massI + massJ) * velocityI + (massJ - massI) / (massI + massJ) * velocityJ;
+            entities[i].velocity.x += 2 * massJ / (massI + massJ) * (velocityJ - velocityI)
+            entities[j].velocity.x += 2 * massI / (massI + massJ) * (velocityI - velocityJ)
             entities[i].position.x += time.delta * entities[i].velocity.x;
             entities[j].position.x += time.delta * entities[j].velocity.x;
         }
