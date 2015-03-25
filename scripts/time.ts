@@ -1,4 +1,4 @@
 var time = {
-    last: performance.now(),
+    last: performance.now() / 1000,
     delta: 0
 };
