@@ -47,8 +47,10 @@ module systems {
         }
     }
     function collideCircles(i: number, j: number) {
-        var positionDiff = {x: entities[i].position.x - entities[j].position.x, y: entities[i].position.y - entities[j].position.y};
-        var positionDiffMag = Math.sqrt(Math.pow(positionDiff.x, 2) + Math.pow(positionDiff.y, 2));
+        var positionDiff;
+        var positionDiffMag;
+        positionDiff = {x: entities[i].position.x - entities[j].position.x, y: entities[i].position.y - entities[j].position.y};
+        positionDiffMag = Math.sqrt(Math.pow(positionDiff.x, 2) + Math.pow(positionDiff.y, 2));
         if (positionDiffMag < entities[i].hitbox.radius + entities[j].hitbox.radius) alert('Collision');
     }
     export function collide() {
