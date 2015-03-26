@@ -49,9 +49,22 @@ module systems {
     function collideCircles(i: number, j: number) {
         var positionDiff: {x: number; y: number};
         var positionDiffMag: number;
+        var velocityDiff: {x: number; y: number};
+        var direction: {x: number; y: number};
+        var projection: {x: number; y: number};
+        var projectionMag: number;
         positionDiff = {x: entities[i].position.x - entities[j].position.x, y: entities[i].position.y - entities[j].position.y};
         positionDiffMag = Math.sqrt(Math.pow(positionDiff.x, 2) + Math.pow(positionDiff.y, 2));
-        if (positionDiffMag < entities[i].hitbox.radius + entities[j].hitbox.radius) alert('Collision');
+        velocityDiff = {x: entities[i].velocity.x - entities[j].velocity.x, y: entities[i].velocity.y - entities[j].velocity.y};
+        if (positionDiffMag < entities[i].hitbox.radius + entities[j].hitbox.radius) {
+            direction = {x: positionDiff.x / positionDiffMag, y: positionDiff.y / positionDiffMag};
+            projectionMag = velocityDiff.x * direction.x + velocityDiff.y * direction.y;
+            projection = {x: projectionMag * direction.x, y: projectionMag * direction.y};
+            entities[i].velocity.x -= projection.x;
+            entities[i].velocity.y -= projection.y;
+            entities[j].velocity.x += projection.x;
+            entities[j].velocity.y += projection.y;
+        }
     }
     export function collide() {
         var i: number;
