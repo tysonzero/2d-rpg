@@ -14,14 +14,14 @@ var entities: {
     {
         position: {x: 200, y: 300},
         velocity: {x: 0, y: 0},
-        hitbox: {width: 50, height: 50, mass: 100},
+        hitbox: {radius: 25, mass: 100},
         sprite: {radius: 25, color: '#FF0000'},
         walk: {acceleration: 200, speed: 200, keys: {up: 87, down: 83, left: 65, right: 68}}
     },
     {
         position: {x: 600, y: 300},
         velocity: {x: 0, y: 0},
-        hitbox: {width: 50, height: 50, mass: 100},
+        hitbox: {radius: 25, mass: 100},
         sprite: {radius: 25, color: '#0000FF'},
         walk: {acceleration: 200, speed: 200, keys: {up: 73, down: 75, left: 74, right: 76}}
     }
