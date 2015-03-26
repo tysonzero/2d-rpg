@@ -53,6 +53,8 @@ module systems {
         var direction: {x: number; y: number};
         var projection: {x: number; y: number};
         var projectionMag: number;
+        var massI: number;
+        var massJ: number;
         positionDiff = {x: entities[i].position.x - entities[j].position.x, y: entities[i].position.y - entities[j].position.y};
         positionDiffMag = Math.sqrt(Math.pow(positionDiff.x, 2) + Math.pow(positionDiff.y, 2));
         velocityDiff = {x: entities[i].velocity.x - entities[j].velocity.x, y: entities[i].velocity.y - entities[j].velocity.y};
@@ -60,10 +62,12 @@ module systems {
             direction = {x: positionDiff.x / positionDiffMag, y: positionDiff.y / positionDiffMag};
             projectionMag = velocityDiff.x * direction.x + velocityDiff.y * direction.y;
             projection = {x: projectionMag * direction.x, y: projectionMag * direction.y};
-            entities[i].velocity.x -= projection.x;
-            entities[i].velocity.y -= projection.y;
-            entities[j].velocity.x += projection.x;
-            entities[j].velocity.y += projection.y;
+            massI = entities[i].hitbox.mass;
+            massJ = entities[j].hitbox.mass;
+            entities[i].velocity.x -= 2 * massJ / (massI + massJ) * projection.x;
+            entities[i].velocity.y -= 2 * massJ / (massI + massJ) * projection.y;
+            entities[j].velocity.x += 2 * massI / (massI + massJ) * projection.x;
+            entities[j].velocity.y += 2 * massI / (massI + massJ) * projection.y;
         }
     }
     export function collide() {
