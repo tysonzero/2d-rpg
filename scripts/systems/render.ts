@@ -13,7 +13,8 @@ module systems {
                         entities[i].position.x,
                         entities[i].position.y,
                         entities[i].sprite.radius,
-                        0, 2 * Math.PI
+                        0,
+                        2 * Math.PI
                     );
                     context.fill();
                 } else {
