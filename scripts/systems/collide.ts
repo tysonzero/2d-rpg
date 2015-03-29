@@ -68,6 +68,10 @@ module systems {
             entities[j].velocity.x += 2 * massI / (massI + massJ) * projection.x;
             entities[i].velocity.y -= 2 * massJ / (massI + massJ) * projection.y;
             entities[j].velocity.y += 2 * massI / (massI + massJ) * projection.y;
+            entities[i].position.x += time.delta * entities[i].velocity.x;
+            entities[j].position.x += time.delta * entities[j].velocity.x;
+            entities[i].position.y += time.delta * entities[i].velocity.y;
+            entities[j].position.y += time.delta * entities[j].velocity.y;
         }
     }
     export function collide() {
