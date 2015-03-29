@@ -65,8 +65,8 @@ module systems {
             massI = entities[i].hitbox.mass;
             massJ = entities[j].hitbox.mass;
             entities[i].velocity.x -= 2 * massJ / (massI + massJ) * projection.x;
-            entities[i].velocity.y -= 2 * massJ / (massI + massJ) * projection.y;
             entities[j].velocity.x += 2 * massI / (massI + massJ) * projection.x;
+            entities[i].velocity.y -= 2 * massJ / (massI + massJ) * projection.y;
             entities[j].velocity.y += 2 * massI / (massI + massJ) * projection.y;
         }
     }
